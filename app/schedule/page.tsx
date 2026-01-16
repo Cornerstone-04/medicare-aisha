@@ -161,7 +161,7 @@ export default function SchedulePage() {
           </div>
         </section>
 
-        <Suspense fallback={null}>
+        <Suspense fallback={<div className="flex min-h-[400px] items-center justify-center">Loading...</div>}>
           <ScheduleContent />
         </Suspense>
       </main>

@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, Suspense } from "react"
-import { useSearchParams, useRouter } from "next/navigation"
+import { useSearchParams } from "next/navigation"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
@@ -30,7 +30,6 @@ interface BookingData {
 
 function BookingContent() {
   const searchParams = useSearchParams()
-  const router = useRouter()
 
   const [currentStep, setCurrentStep] = useState<BookingStep>("doctor")
   const [booking, setBooking] = useState<BookingData>({
@@ -460,7 +459,7 @@ export default function BookPage() {
     <div className="flex min-h-screen flex-col">
       <Header />
       <main className="flex-1 bg-secondary/20">
-        <Suspense fallback={null}>
+        <Suspense fallback={<div className="flex min-h-[400px] items-center justify-center">Loading...</div>}>
           <BookingContent />
         </Suspense>
       </main>

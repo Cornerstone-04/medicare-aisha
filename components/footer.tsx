@@ -25,7 +25,7 @@ export function Footer() {
               {["About Us", "Our Services", "Our Doctors", "Book Appointment"].map((item) => (
                 <li key={item}>
                   <Link
-                    href={`/${item.toLowerCase().replace(" ", "-")}`}
+                    href={`/${item.toLowerCase().replace(" ", "-").replace("our-", "")}`}
                     className="text-sm text-muted-foreground transition-colors hover:text-primary"
                   >
                     {item}
